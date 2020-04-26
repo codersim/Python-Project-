@@ -56,13 +56,35 @@ def listTags():
         tagsList.append(tags)
     return(tagsList)
 
+# Make a list of the comments for each talk
+def listComments():
+    data = readData()
+
+    commentsList = []
+
+    for row in data:
+        comments = row['comments']
+        commentsList.append(comments)
+    return(commentsList)
+
+# Convert the list of string durations into int durations
+def intComments():
+    intComments = []
+    commentsList = listComments()
+
+    for comments in commentsList:
+        intComments.append(int(comments))
+    return(intComments)
+
+
 # Make a dictionary of comments & tags as key value pairs
 def dictMaker():
-    intDuration = intData()
+    commentsList = intComments()
     tagsList = listTags()
 
-    commentsTags = dict(zip(intDuration, tagsList))
-    print(commentsTags[1286])
+    commentsTags = dict(zip(commentsList, tagsList))
+    maxDiscussion = commentsTags[max(commentsList)]
+    print(f"The topics which initiates the most discussion are {maxDiscussion}")
 
 dictMaker()
 

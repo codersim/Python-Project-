@@ -173,7 +173,8 @@ most_viewed_talks()
 
 # View ted talk durations over 2000 seconds
 
-duration=input(What is the ted talks duration?)
+duration = input('enter ted talks duration')
 longtime = float(duration) >= 2000
 
-print('This is a long talk: {}'.format(longtime)
+print('This is a long talk: {}'.format(longtime))
+

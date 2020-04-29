@@ -173,8 +173,36 @@ most_viewed_talks()
 
 # View ted talk durations over 2000 seconds
 
-duration = input('enter ted talks duration')
-longtime = float(duration) >= 2000
+talkduration = input('enter ted talk video duration')
+longtime = float(talkduration) >= 2000
 
-print('This is a long talk: {}'.format(longtime))
+if not longtime:
+    print('This is a short talk')
+
+if longtime:
+
+      talks = [{'event': 'TED2005', 'duration':2065},
+        {'event':'TED2002','duration':2128},
+        {'event':'TED1990','duration':2128},
+        {'event':'TED2002','duration':2678},
+        {'event':'TEDGlobal 2005','duration':2018},
+        {'event':'Justice with Michael Sandel','duration':3296},
+        {'event':'Carnegie Mellon University','duration':4587},
+        {'event':'Stanford University','duration':2246},
+        {'event':'University of California','duration':3573},
+        {'event':'Royal Institution','duration':3475},
+        {'event':'BBC TV','duration':3955},
+        {'event':'University of California','duration':5256},
+        {'event':'Handheld Learning','duration':2761},
+        {'event':'TED2014','duration':2102},
+        {'event':'TED2014','duration':2010},
+        {'event':'TED Dialogues','duration':3608},
+        {'event':'TED Dialogues','duration':2853},
+        {'event':'TED2017','duration':2450},
+             ]
+    print('This is a long talk, see similar talks of this length: {}'.format(longtime))
+    for talk in talks:
+        print(talk['event'])
+        print(talk['duration'])
+
 

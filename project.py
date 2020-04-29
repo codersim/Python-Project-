@@ -34,3 +34,5 @@ def totalCount():
 #################################       MAIN METHOD     #################################
 totalCount()
 
+THIS IS A TEST
+
